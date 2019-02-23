@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 @section('title','ShopOnline')
 
@@ -19,7 +19,7 @@
             <div class="small-6 columns">
                 <div class="item-wrapper">
                     <h3 class="subheader">
-                       <span class="price-tag">$20</span> Mc-Mykey Designed Shirt
+                       <span class="price-tag">$20</span> 
                     </h3>
                     <div class="row">
                         <div class="large-12 columns">

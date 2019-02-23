@@ -15,7 +15,8 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        //
+        $items=Item::all();
+        return view('admin.item.index',compact('items'));
     }
 
     /**
@@ -39,6 +40,16 @@ class ItemsController extends Controller
     {
         $formInput=$request->except('image');
         
+        //validation
+        
+        $this->validate($request,[
+            'name'=>'required',
+            'size'=>'required',
+            'price'=>'required',
+            'image'=>'image|mimes:png,jpg,jpeg|max:10000'
+
+        ]);
+        //image upload
         $image=$request->image;
         if($image){
             $imageName=$image->getClientOriginalName();
@@ -48,7 +59,7 @@ class ItemsController extends Controller
         
         
         Item::create($formInput);
-        return redirect()->route('admin.index');
+        return redirect()->route('item.index');
 
     }
 

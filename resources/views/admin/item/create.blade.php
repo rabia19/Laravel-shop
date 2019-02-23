@@ -17,10 +17,15 @@
                 {{ Form::label('description', 'Description') }}
                 {{ Form::text('description', null, array('class' => 'form-control')) }}
             </div>
+
+            <div class="form-group">
+                {{ Form::label('price', 'Price') }}
+                {{ Form::text('price', null, array('class' => 'form-control')) }}
+            </div>
            
 
             <div class="form-group">
-                {{ Form::label('size', 'Size') }}
+                {{ Form::label('size', 'Model') }}
                 {{ Form::select('size', [ 'small' => 'XS', 'medium' => 'XR','large'=>'XS Max'], null, ['class' => 'form-control']) }}
             </div>
 
