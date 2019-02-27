@@ -15,9 +15,7 @@
 }
 */
 
-/*HERO SECTION*/
-
-
+/*HERO SECTION*
 
 /*product card*/
 
@@ -71,7 +69,7 @@ h5 {
 }
 
 p {
-  color: #888;
+  
   font-size: 13px;
   margin-bottom: 0;
 }
@@ -79,33 +77,7 @@ p {
 
 /*Footer*/
 
-.full-width {
-  max-width: 1400px;
-}
 
-.footer {
-  background-color: #3c4d58;
-  padding: 2rem 4rem;
-  text-align: center;
-  color: #fff;
-}
-.footer i {
-  font-size: 100px;
-}
-
-.footer h4 {
-  color: #fff;
-  font-size: 1em;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 2.5rem;
-  margin-bottom: 10px;
-}
-.footer p, .footer a {
-  font-weight: 300;
-  font-size: .8em;
-  color: #fff;
-}
 
 @media only screen and (min-width: 40.063em) {
   .footer .columns:nth-child(n+2) {

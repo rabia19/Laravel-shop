@@ -1,7 +1,7 @@
 @extends('layouts.main')
  
 @section('content')
-    <div class="row">
+    <div class="row" style="margin-top:150px;">
         <h3>Cart Items</h3>
 
 
@@ -34,13 +34,13 @@
                     </td>
 
                     <td>
-                        <input style="float: left"  type="submit" class="button success small" value="Ok">
+                        <input style="float: left"  type="submit" class="button small success" value="Ok">
                         {!! Form::close() !!}
 
                         <form action="{{route('cart.destroy',$cartItem->rowId)}}"  method="POST">
                            {{csrf_field()}}
                            {{method_field('DELETE')}}
-                           <input class="button small alert" type="submit" value="Delete">
+                           <input class="button small alert" type="submit" value="Delete"  style="margin-left:10px;">
                          </form>
                    
                      </td>
@@ -55,7 +55,7 @@
             </tbody>
         </table>
 
-        <a href="#" class="button">Checkout</a>
+        <a href="#" class="button " style="border:none;">Checkout</a>
     </div>
 
 

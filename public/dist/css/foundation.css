@@ -2718,9 +2718,7 @@ select[multiple] {
 
 .badge {
     display: inline-block;
-    padding: 0.3em;
-    min-width: 2.1em;
-    font-size: 0.6rem;
+    
     text-align: center;
     border-radius: 50%;
     background: #2199e8;

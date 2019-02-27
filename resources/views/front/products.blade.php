@@ -1,11 +1,12 @@
 @extends('layouts.main')
 
 @section('title','Products')
-
 @section('content')
+
   <!-- products listing -->
          <!-- Latest SHirts -->
-         <div class="row">
+         <div class="products" style="margin-top:100px;">
+         
          
          @forelse($products as $product)
             <div class="small-3 columns">
@@ -31,6 +32,8 @@
                   </p>
                 </div>
             </div> 
+           
+</div>
             @empty
                 <h3>No Products</h3>
          @endforelse

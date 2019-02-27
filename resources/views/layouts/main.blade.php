@@ -20,84 +20,34 @@
     <link rel="stylesheet" href="{{asset('css/app2.css')}}"/>
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     </head>
     <body>
-        <header style="background-image:url(images/aa.jpeg);">
-            <div class="top-nav container">
-                <div class="logo">SHOP</div>
-                <ul>
-                    <li><a href="{{route('products')}}">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="{{route('cart.index')}}">Cart</a></li>
+        <header >
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light ">
+        <div class="container">
+            <a class="navbar-brand" href="{{route('home')}}">SHOP</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                    <li><a class ="nav-link" href="{{route('products')}}">Shop</a></li>
+                    <li><a class ="nav-link" href="#">About</a></li>
+                    <li><a class ="nav-link" href="#">Clothing</a></li>
+                    <li><a class ="nav-link" href="#">Bag</a></li>
+                    <li><a class ="nav-link" href="#">Services</a></li>
+                    <li><a class ="nav-link" href="{{route('cart.index')}}"><i class="fas fa-shopping-cart"></i><span class="alert badge">{{Cart::count()}}
+                            </span></a>
+                    </li>
                 </ul>
-            </div> <!-- end top-nav -->
-
-            <div id="text-carousel" class="carousel slide" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <div class="row">
-        <div class="col-xs-offset-3 col-xs-6">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="carousel-content">
-                        <div>
-                        <h6>THE</h6>    
-                <h1 style="color:white;">COLLLECTION</h1>
-                    <p>A practical example of using CSS Grid for a typical website layout.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="carousel-content">
-                        <div>
-                        <h6>THE</h6>    
-                        <h1 style="color:white;">COLLLECTION</h1>
-                    <p>A practical example of using CSS Grid for a typical website layout.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="carousel-content">
-                        <div>                          
-                        <h6>THE</h6>    
-                <h1 style="color:white;">COLLLECTION</h1>
-                    <p>A practical example of using CSS Grid for a typical website layout.</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
         </div>
-    </div>
-    <!-- Controls --> <a class="left carousel-control" href="#text-carousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
- <a class="right carousel-control" href="#text-carousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-  <div class="hero text-center">
-           <a href="{{url('/products')}}"><button class="btn btn-outline-light">Check out </button></a>
-</div>
-        
-
-
-</div>
 </header>
 @yield('content')
 
-      <footer>
-            <div class="footer-content container">
-                
-                <ul>
-                    <li>Follow:</li>
-                    <li><a href="#"><i class="fa fa-globe"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div> <!-- end footer-content -->
-        </footer>
+      
 
     <script src="{{asset('dist/js/vendor/jquery.js')}}"></script>
     <script src="{{asset('dist/js/app.js')}}"></script>
