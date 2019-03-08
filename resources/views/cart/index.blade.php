@@ -21,21 +21,18 @@
                     <td>{{$cartItem->name}}</td>
                     <td>{{$cartItem->price}}</td>
                     
-                    <td width="50px">
+                    <td width="70px">
                         {!! Form::open(['route' => ['cart.update',$cartItem->rowId], 'method' => 'PUT']) !!}
                         <input name="qty" type="text" value="{{$cartItem->qty}}">
                         <input type="submit" class="btn btn-sm btn-default" value="Ok">
                         {!! Form::close() !!}
                     </td>
-                    <td>
-                        <div > {!! Form::select('size', ['small'=>'Small','medium'=>'Medium','large'=>'Large'] , $cartItem->options->has('size')?$cartItem->options->size:'' ) !!}
-                           </div>
-
+                    <td>{!! Form::select('size', ['xsmall'=>'XS','small'=>'S','medium'=>'M','large'=>'L','xlarge'=>'XL'] , $cartItem->options->has('size')?$cartItem->options->size:'' ) !!}
                     </td>
 
                     <td>
-                        <input style="float: left"  type="submit" class="button small success" value="Ok">
-                        {!! Form::close() !!}
+                       <!-- <input style="float: left"  type="submit" class="button small success" value="Ok">
+                        {!! Form::close() !!}-->
 
                         <form action="{{route('cart.destroy',$cartItem->rowId)}}"  method="POST">
                            {{csrf_field()}}
@@ -45,13 +42,20 @@
                    
                      </td>
                      
-                    
-                     <td>{{$cartItem->options->has('model')?$cartItem->options->size:''}}</td>
-
                 </tr>
             @endforeach
+            <tr>
+                <td></td>
+                <td>
+                    Total: {{Cart::total() kzt}}
+                </td>
+                <td>Items: {{Cart::count()}}
 
-         
+                </td>
+                <td></td>
+                <td></td>
+
+            </tr>
             </tbody>
         </table>
 
