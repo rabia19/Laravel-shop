@@ -24,15 +24,18 @@
                     <td width="70px">
                         {!! Form::open(['route' => ['cart.update',$cartItem->rowId], 'method' => 'PUT']) !!}
                         <input name="qty" type="text" value="{{$cartItem->qty}}">
-                        <input type="submit" class="btn btn-sm btn-default" value="Ok">
-                        {!! Form::close() !!}
+                       
                     </td>
-                    <td>{!! Form::select('size', ['xsmall'=>'XS','small'=>'S','medium'=>'M','large'=>'L','xlarge'=>'XL'] , $cartItem->options->has('size')?$cartItem->options->size:'' ) !!}
-                    </td>
+                    
+                    
+                    <td>
+                       {!! Form::select('size', ['xsmall'=>'XS','small'=>'S','medium'=>'M','large'=>'L','xlarge'=>'XL'] , $cartItem->options->has('size')?$cartItem->options->size:'' ) !!}
+                       </td>
+    
 
                     <td>
-                       <!-- <input style="float: left"  type="submit" class="button small success" value="Ok">
-                        {!! Form::close() !!}-->
+                       <input style="float: left"  type="submit" class="button success " value="Ok">
+                        {!! Form::close() !!}
 
                         <form action="{{route('cart.destroy',$cartItem->rowId)}}"  method="POST">
                            {{csrf_field()}}
@@ -47,7 +50,7 @@
             <tr>
                 <td></td>
                 <td>
-                    Total: {{Cart::total() kzt}}
+                    Total: {{Cart::total()}} kzt
                 </td>
                 <td>Items: {{Cart::count()}}
 
@@ -59,7 +62,7 @@
             </tbody>
         </table>
 
-        <a href="#" class="button " style="border:none;">Checkout</a>
+        <a href="{{url('/checkout')}}" class="button " style="border:none;">Checkout</a>
     </div>
 
 

@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/cart', 'CartController');
 
 
-Route::group(['prefix' => 'admin','middleware'=>'auth'], function(){
+Route::group(['prefix' => 'admin','middleware'=> ['auth','admin']], function(){
     Route::get('/',function(){
         return view('admin.index');
     })->name('admin.index');
@@ -33,3 +33,6 @@ Route::group(['prefix' => 'admin','middleware'=>'auth'], function(){
    Route::resource('item','ItemsController');
    Route::resource('category','CategoriesController');
 });
+
+Route::get('checkout','CheckoutController@check1');
+Route::get('shippingInfo','CheckoutController@shipping')->name('checkout.shipping');

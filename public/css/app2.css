@@ -202,10 +202,6 @@ strong {
           align-items: center;
 }
 
-.button {
-  border: 1px solid #212121;
-  padding: 12px 40px;
-}
 
 .button:hover {
   color: #e9e9e9;
@@ -319,10 +315,10 @@ form button[type="submit"] {
 }
 
 .alert {
-  padding: 15px;
+  padding: 13px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 4px;
+ 
 }
 
 .alert-success {

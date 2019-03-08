@@ -78,7 +78,7 @@
       <div class="row">
         <div class="col">
           <div class="container pt-5">
-            
+          <h1 class="text-center">FASHION WEEK</h1>
             <p class="d-none d-md-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est eaque magni sit dolores. Nisi, dolor nam modi perspiciatis
               consequatur soluta.</p>
           </div>
@@ -91,7 +91,7 @@
       <!-- PHOTO GALLERY -->
   <section id="gallery" class="py-5">
     <div class="container">
-      <h1 class="text-center">FAVOURITE PIC'S</h1>
+      
       <p class="text-center">Check out our photos</p>
       <div class="row mb-4">
         <div class="col-md-4">
