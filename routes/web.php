@@ -38,3 +38,5 @@ Route::resource('address','AddressController');
 
 Route::get('checkout','CheckoutController@check1');
 Route::get('shippingInfo','CheckoutController@shipping')->name('checkout.shipping');
+Route::get('payment','CheckoutController@payment')->name('checkout.payment');
+Route::post('store-payment','CheckoutController@storePayment')->name('payment.store');

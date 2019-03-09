@@ -43,6 +43,8 @@ class AddressController extends Controller
             'phone'=>'required|integer',
         ]);
         Auth::user()->address()->create($request->all());
+        
+        return redirect()->route('checkout.payment');
     }
 
     /**

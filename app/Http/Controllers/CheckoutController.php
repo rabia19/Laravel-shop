@@ -19,6 +19,15 @@ class CheckoutController extends Controller
     {
         return view('front.shippingInfo');
     }
+    public function payment()
+    {
+        return view('front.payment');
+    }
+    
+    public function storePayment(Request $request){
+        dd('OK');
+    }
+
 }
 
 
