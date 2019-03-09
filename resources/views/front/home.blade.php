@@ -3,7 +3,6 @@
 @section('content')
 
 
-    
 <div class="background"  style="background-image:url(images/slide.jpg);">
     <div class="row" style="height:400px;">
         <div class="col-xs-offset-3 col-xs-6">
