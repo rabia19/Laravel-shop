@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                    <li><a class ="nav-link"href="" data-toggle="modal" data-target="#exampleModal">Login</a></li>
+                    <li><a class ="nav-link"href="{{ route('login') }}">Login</a></li>
                     <li><a class ="nav-link" href="{{route('products')}}">Shop</a></li>
                
                     
@@ -47,79 +47,8 @@
                 </ul>
         </div>
 </header>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-    <div class='col-lg-12'>
-      <form class="form-vertical" role="form" method="post" action="">
-        <div class="form-group">
-          <input type="text" name="email" class="form-control" placeholder="Enter email" value="">
-        </div>
-        <div class="form-group">
-        <input type="password" name="password" class="form-control" placeholder="Enter password">
 
-        </div>
-        <input type="hidden" name="_token" value="{{Session::token()}}">
-      </form>
-    </div>
-  </div>
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-primary" id="lgnBtn" data-toggle="modal" data-target="#exampleModal">Login</button>
-        <button type="button" class="btn btn-primary" id = "regBtn" data-toggle="modal" data-target="#exampleModalReg">Register</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Reg modal-->
-
-<div class="modal fade" id="exampleModalReg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-    <div class='col-lg-12'>
-      <form class="form-vertical" role="form" method="post" action="">
-         <div class="form-group">
-          <input type="text" name="text" class="form-control" placeholder="Enter username" value="">
-        </div>
-        <div class="form-group">
-          <input type="text" name="email" class="form-control" placeholder="Enter email" value="">
-        </div>
-        <div class="form-group">
-        <input type="password" name="password" class="form-control" placeholder="Enter password">
-
-        </div>
-        <input type="hidden" name="_token" value="{{Session::token()}}">
-      </form>
-    </div>
-  </div>
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="lgnBtn">Login</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalReg" id="regBtn">Register</button>
-      </div>
-    </div>
-  </div>
-</div>
 @yield('content')
-
-      
 <script src="{{asset('dist/js/vendor/jquery.js')}}"></script>
 
 <script type="text/javascript">
