@@ -26,17 +26,28 @@ Route::resource('/cart', 'CartController');
 
 
 Route::group(['prefix' => 'admin','middleware'=> ['auth','admin']], function(){
+    Route::post('toggledeliver/[orderId]','OrderController@toggledeliver')->name('toggle.deliver');
+
     Route::get('/',function(){
         return view('admin.index');
     })->name('admin.index');
 
    Route::resource('item','ItemsController');
    Route::resource('category','CategoriesController');
+
+   Route::get('orders/{type?}', 'OrderController@Orders');
    
+
 });
+
+
 Route::resource('address','AddressController');
 
-Route::get('checkout','CheckoutController@check1');
-Route::get('shippingInfo','CheckoutController@shipping')->name('checkout.shipping');
+//Route::get('checkout','CheckoutController@check1');
+
+Route::group(['middleware' => 'auth'], function (){
+    Route::get('shippingInfo','CheckoutController@shipping')->name('checkout.shipping');
+});
+
 Route::get('payment','CheckoutController@payment')->name('checkout.payment');
 Route::post('store-payment','CheckoutController@storePayment')->name('payment.store');

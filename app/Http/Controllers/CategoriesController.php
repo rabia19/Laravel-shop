@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
-
 class CategoriesController extends Controller
 {
     /**
@@ -13,9 +13,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Category::all();
+        return view('admin.category.index',compact(['categories']));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +25,6 @@ class CategoriesController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -34,20 +33,23 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create(['name'=>$request->name,'slug'=>str_slug($request->name)]);
+        return back();
     }
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($categoryId=null)
     {
-        //
+        if(!empty($categoryId)){
+            $items=Category::find($categoryId)->items;
+        }
+        $categories=Category::all();
+        return view('admin.category.index',compact(['categories','items']));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -58,7 +60,6 @@ class CategoriesController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -70,7 +71,6 @@ class CategoriesController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -79,6 +79,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category=Category::find($id);
+        $category->items()->delete();
+        $category->delete();
+        return back();
     }
 }

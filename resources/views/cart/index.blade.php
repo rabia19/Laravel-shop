@@ -40,7 +40,7 @@
                         <form action="{{route('cart.destroy',$cartItem->rowId)}}"  method="POST">
                            {{csrf_field()}}
                            {{method_field('DELETE')}}
-                           <input class="button small alert" type="submit" value="Delete"  style="margin-left:10px;">
+                           <input class="button small alert" type="submit" value="Delete">
                          </form>
                    
                      </td>
@@ -62,7 +62,7 @@
             </tbody>
         </table>
 
-        <a href="{{url('/checkout')}}" class="button " style="border:none;">Checkout</a>
+        <a href="{{route('checkout.shipping')}}" class="button " style="border:none;">Checkout</a>
     </div>
 
 

@@ -15,6 +15,7 @@ class CartController extends Controller
     public function index()
     {
         $cartItems=Cart::content();
+      
         return view('cart.index',compact('cartItems'));
     }
 
@@ -88,6 +89,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::remove($id);
+        return back();
     }
 }

@@ -26,12 +26,12 @@
 
             <div class="form-group">
                 {{ Form::label('size', 'Model') }}
-                {{ Form::select('size', [ 'small' => 'XS', 'medium' => 'XR','large'=>'XS Max'], null, ['class' => 'form-control']) }}
+                {{ Form::select('size', [ 'small' => 'XS', 'medium' => 'M','large'=>'L'], null, ['class' => 'form-control']) }}
             </div>
 
             <div class="form-group">
                 {{ Form::label('category_id', 'Categories') }}
-                {{ Form::select('category_id', [1=>'black'], null, ['class' => 'form-control','placeholder'=>'Select Category']) }}
+                {{ Form::select('category_id', $categories, null, ['class' => 'form-control','placeholder'=>'Select Category']) }}
             </div>
         
 

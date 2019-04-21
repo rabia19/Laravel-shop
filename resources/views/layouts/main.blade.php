@@ -21,7 +21,13 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css"> -->
+    <link href="{{ asset('plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('plugins/OwlCarousel2-2.2.1/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/main_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('styles/responsive.css')}}">
     </head>
     <body>
         <header >
@@ -50,15 +56,24 @@
 
 @yield('content')
 <script src="{{asset('dist/js/vendor/jquery.js')}}"></script>
-
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
-    Stripe.setPublishableKey('pk_test_GryUHqXe48kgNc75J2BovmeN');
+    Stripe.setPublishableKey('pk_test_2bhe8tP5qDQVhMtHRlBE1P5z');
 </script>
 <script src="{{asset('dist/js/app.js')}}"></script>
+<script src="{{asset('dist/js/app2.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
 <script src="{{asset('dist/js/vendor/foundation.js')}}"></script>
 <script>var stripe = Stripe('pk_test_2bhe8tP5qDQVhMtHRlBE1P5z');
 var elements = stripe.elements();</script>
+
+
+<script src="{{asset('styles/bootstrap4/popper.js')}}"></script>
+<script src="{{asset('styles/bootstrap4/bootstrap.min.js')}}"></script>
+<script src="{{asset('plugins/Isotope/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+<script src="{{asset('plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
     </body>
 </html>

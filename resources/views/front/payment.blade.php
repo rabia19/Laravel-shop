@@ -19,9 +19,11 @@
                 <label>
                     <span>Expiration (MM/YY)</span>
                     <input type="text" size="2" data-stripe="exp_month">
+                </label>
+                    
                     <span> / </span>
                     <input type="text" size="2" data-stripe="exp_year">
-                </label>
+                
             </div>
 
             <div class="form-row">

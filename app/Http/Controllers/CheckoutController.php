@@ -1,19 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
+
+use App\Order;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
-    public function check1()//step1
-    {
-        if(Auth::check()){
-            return redirect()->route('checkout.shipping');
-        }
-        
-        return redirect('login');
-    }
+
 
     public function shipping()
     {
@@ -25,9 +20,28 @@ class CheckoutController extends Controller
     }
     
     public function storePayment(Request $request){
-        dd('OK');
-    }
+      
 
+        // \Stripe\Stripe::setApiKey("sk_test_tinIVAINWh93e0UN7lUCLAah");
+      
+        // $token = $request->stripeToken;
+
+        // try {
+        //     $charge = \Stripe\Charge::create(array(
+        //         "amount" => Cart::total()*100,
+        //         "currency" => "usd",
+        //         "source" => $token,
+        //         "description" => "Example charge"
+        //     ));
+        // } catch (\Stripe\Error\Card $e) {
+        //     // The card has been declined
+        // }
+
+        Order::createOrder();
+        return "Order complete";
+       
+    }
+    
 }
 
 
